@@ -6,26 +6,26 @@
         {
             string userInput = "";
             string message = userInput;
-            string accumulatedMessage = AccumulateMessage(message);
+            List<string> addedValue = new List<string>();
+
+            // Prompt the user for input
+            Console.WriteLine("Enter a message to accumulate or 'Q' to quit):");
 
             do
-            { 
-                Console.WriteLine(accumulatedMessage);
-                Console.ReadLine();
+            {
+                userInput = Console.ReadLine();
+                addedValue.Add(userInput);
+                Console.WriteLine(userInput);
 
-            } while (userInput != "Q" && userInput != "q") ;
+            } while (userInput != "Q" && userInput != "q");
+
+            Console.Clear();
+            Console.WriteLine($"Your accumulated message is: {userInput}");
+            Console.WriteLine("Have a good day!");
 
             //pause
             Console.Read();
-        }
 
-        static string AccumulateMessage(string message)
-        {
-            Console.WriteLine("Enter a message to accumulate (or 'Q' to quit):");
-            string userInput = "";
-            userInput = Console.ReadLine();
-            message = userInput;
-            return $"Accumulated: {message}";
         }
     }
 }
