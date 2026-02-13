@@ -23,19 +23,20 @@ namespace AccumulateMessageFunction
             {
                 userInput = Console.ReadLine();
 
-                //stores the user input in a variable and adds it to the message variable if the user does not enter 'Q' or 'q'
+                //stores the user input and adds it to the message variable if the user does not enter 'Q' or 'q'
                 if (userInput != "Q" && userInput != "q")
                 {
+                    //if the message variable is empty, it will set the message variable to the user input
                     if (string.IsNullOrEmpty(message))
                     { 
                         message = userInput;
                     }
 
+                    //if the message variable is not empty, it will add the user input to the message variable with a new line in between
                     else
                     {
                         message = message + "\n" + userInput;
                     }
-
                     addedValue = message;
                 }
 
@@ -47,6 +48,7 @@ namespace AccumulateMessageFunction
             //clears the console and displays the accumulated messages before quitting
             Console.Clear();
             Console.WriteLine($"Your accumulated message is: \n{addedValue}");
+            Console.WriteLine();
             Console.WriteLine("What a beautiful list! Have a good day!");
 
             //pause
